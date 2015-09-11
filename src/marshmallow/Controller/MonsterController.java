@@ -1,10 +1,12 @@
 package marshmallow.Controller;
 
 import marshmallow.model.MarshmallowMonster;
+import marshmallows.view.MonsterDisplay;
 
 public class MonsterController
 {
-	private MarshmallowMonster codyMonster;
+	private MarshmallowMonster dylanMonster;
+	private MonsterDisplay myDisplay;
 	
 	public MonsterController()
 	{
@@ -15,6 +17,13 @@ public class MonsterController
 		double hair = 0.0;
 		boolean hasBellyButton = false;
 		
-		codyMonster = new MarshmallowMonster(name, eyes, hasBellyButton, noses, legs, hair);
+		myDisplay = new MonsterDisplay();
+		dylanMonster = new MarshmallowMonster(name, eyes, hasBellyButton, noses, legs, hair);
 	}
+	
+	public void start()
+	{
+		myDisplay.displayInfo(dylanMonster.toString());
+	}
+
 }
