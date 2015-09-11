@@ -25,9 +25,10 @@ public class MarshmallowMonster
 		this.monsterHair = monsterHair;
 	}
 	
-	public String toSting()
+	public String toString()
 	{
-		String monsterInfo = "My monster has " + monsterLegs + "legs and its' name is " + monsterName;
+		String monsterInfo = "My monster has " + monsterLegs + "legs and its' name is " + monsterName + " my monster also has " 
+		+ monsterEyes + " eyes " + monsterNoses + " Nose " + monsterLegs + " legs " + monsterHair + " hair";
 		
 		return monsterInfo;
 	}

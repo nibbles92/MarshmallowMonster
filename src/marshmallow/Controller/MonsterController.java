@@ -10,11 +10,11 @@ public class MonsterController
 	
 	public MonsterController()
 	{
-		String name = "";
-		int eyes = 0;
-		int noses = 0;
-		double legs = 0.0;
-		double hair = 0.0;
+		String name = "Nibblous the Destroyer";
+		int eyes = 26;
+		int noses = 1;
+		double legs = 4.0;
+		double hair = 8.0;
 		boolean hasBellyButton = false;
 		
 		myDisplay = new MonsterDisplay();
