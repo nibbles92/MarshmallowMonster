@@ -55,12 +55,12 @@ public class MarshmallowMonster
 		return monsterBellyButton;
 	}
 	
-	public void setmonsterNoses()
+	public void setmonsterNoses(int monsterNoses)
 	{
 		this.monsterNoses = monsterNoses;
 	}
 	
-	public void setmonsterBellyButton()
+	public void setmonsterBellyButton(boolean monsterBellyButton)
 	{
 		this.monsterBellyButton = monsterBellyButton;
 	}
