@@ -3,6 +3,8 @@ package marshmallow.Controller;
 import marshmallow.model.MarshmallowMonster;
 import marshmallows.view.MonsterDisplay;
 import java.util.Scanner;
+import marshmallows.view.Popup;
+
 
 public class MonsterController
 {
@@ -10,6 +12,7 @@ public class MonsterController
 	private MarshmallowMonster userMonster;
 	private MonsterDisplay myDisplay;
 	private Scanner monsterScanner;
+    private Popup mypopup;
 	
 	public MonsterController()
 	{
@@ -20,6 +23,7 @@ public class MonsterController
 		double hair = 8.0;
 		boolean hasBellyButton = true;
 		
+		mypopup = new Popup();
 		
 		monsterScanner = new Scanner(System.in);
 		myDisplay = new MonsterDisplay();
@@ -30,7 +34,12 @@ public class MonsterController
 	{
 		myDisplay.displayInfo(dylanMonster.toString());
 		createUserMonster();
-		myDisplay.displayInfo("updated monster info: " + userMonster.toString());
+		myDisplay.displayInfo("User monster info: " + userMonster.toString());
+	}
+	
+	private void makeMosterGui()
+	{
+		
 	}
 	
 	private void askQuestions()
@@ -71,17 +80,26 @@ public class MonsterController
 		System.out.println("What is your monsters name?");
 		String userName;
 		userName = monsterScanner.nextLine();
+		
 		System.out.println("How many legs will it have? This is a decimal value.");	
-		double userLegs = monsterScanner.nextDouble();
+		double userLegs;
+		userLegs = monsterScanner.nextDouble();
+		
 		System.out.println("How much hair does it have, another decmal value");
 		double userHair;
 		userHair = monsterScanner.nextDouble();
+		
 		System.out.println("Does it have a belly button? True or False");
-		boolean userBellyButton = monsterScanner.nextBoolean();
+		boolean userBellyButton;
+		userBellyButton = monsterScanner.nextBoolean();
+		
 		System.out.println("How many Eyes does it have?");
-		int userEyes = monsterScanner.nextInt();
+		int userEyes;
+		userEyes = monsterScanner.nextInt();
+		
 		System.out.println("How many noses does it have?");
-		int userNoses = monsterScanner.nextInt();
+		int userNoses;
+		userNoses = monsterScanner.nextInt();
 		
 		// Step Two: Build the monster using the constructor.
 		userMonster = new MarshmallowMonster(userName, userEyes, userBellyButton, userNoses, userLegs, userHair);
