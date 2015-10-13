@@ -39,6 +39,64 @@ public class MonsterController
 	
 	private void makeMosterGui()
 	{
+		String name = mypopup.getAnswer("Type in your monster name.");
+		
+		mypopup.displayResponse("You typed in " + name);
+		
+		int eyes;
+		String tempeyes = mypopup.getAnswer("How many eyes does your monster have?");
+		
+		while(!isInteger(tempeyes))
+		{
+			tempeyes = mypopup.getAnswer("Type in an interger value");
+		}
+		
+		if(isInteger(tempeyes))
+		{
+			eyes = Integer.parseInt(tempeyes);
+		}
+		else
+		{
+			eyes = -1345452;
+		}
+		
+		mypopup.displayResponse("You typed in " + eyes);
+		int noses;
+		String tempnoses = mypopup.getAnswer("How many noses does your monster have");
+		
+		while(!isInteger(tempnoses))
+		{
+			tempnoses = mypopup.getAnswer("Give me a valid integer value!");
+		}
+		
+		if(isInteger(tempnoses))
+		{
+			noses = Integer.parseInt(tempnoses);
+		}
+		else
+		{
+			noses = -12678;
+		}
+		
+		mypopup.displayResponse("You typed in " + noses);
+		double legs;
+		String templegs = mypopup.getAnswer("How many legs does your monster have?");
+		
+		while(!isDouble(templegs))
+		{
+			templegs = mypopup.getAnswer("Do a valid double value!!");
+		}
+		
+		if(isDouble(templegs))
+		{
+			legs = Double.parseDouble((templegs));
+		}
+		else
+		{
+			legs = -.234523452345;
+		}
+		
+		mypopup.displayResponse("You typed in " legs);
 		
 	}
 	
@@ -104,6 +162,38 @@ public class MonsterController
 		// Step Two: Build the monster using the constructor.
 		userMonster = new MarshmallowMonster(userName, userEyes, userBellyButton, userNoses, userLegs, userHair);
 		
+	}
+	
+	private boolean isInteger(String input)
+	{
+		boolean isInt = false;
+				
+		try
+		{
+			int validInteger = Integer.parseInt(input);
+			isInt = true;
+		}
+		catch(NumberFormatException error)
+		{
+			mypopup.displayResponse("You didn't type in a vaild interger!");
+		}
+		return isInt;
+	}
+	
+	private boolean isDouble(String input)
+	{
+		boolean isDouble = false;
+		
+		try
+		{
+			double validDouble = Double.parseDouble(input);
+			isDouble = true;
+		}
+		catch(NumberFormatException error)
+		{
+			mypopup.displayResponse("You did not type in a valid interger");
+		}
+		return isDouble;
 	}
 
 }
