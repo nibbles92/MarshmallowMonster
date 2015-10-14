@@ -96,8 +96,23 @@ public class MonsterController
 			legs = -.234523452345;
 		}
 		
-		mypopup.displayResponse("You typed in " legs);
+		mypopup.displayResponse("You typed in "  + legs);
+		double hair;
+		String temphair = mypopup.getAnswer("How much hair does your monster have");
 		
+		while(isDouble(temphair))
+		{
+			temphair = mypopup.getAnswer("Give me another double value!!");
+		}
+		
+		if(isDouble(temphair))
+		{
+			hair = Double.parseDouble((temphair));
+		}
+		else
+		{
+			hair = -.99999999;
+		}
 	}
 	
 	private void askQuestions()
